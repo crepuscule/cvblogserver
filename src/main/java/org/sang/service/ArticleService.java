@@ -49,11 +49,11 @@ public class ArticleService {
 
 
             //打标签
-            String[] dynamicTags = article.getDynamicTags();
-            if (dynamicTags != null && dynamicTags.length > 0) {
-                int tags = addTagsToArticle(dynamicTags, article.getId());
-                if (tags == -1) {
-                    return tags;
+            String[] dynamicTag = article.getDynamicTag();
+            if (dynamicTag != null && dynamicTag.length > 0) {
+                int tag = addTagsToArticle(dynamicTag, article.getId());
+                if (tag == -1) {
+                    return tag;
                 }
             }
             //返回新文章id
@@ -71,11 +71,11 @@ public class ArticleService {
             //调用update方法
             int i = articleMapper.updateArticle(article);
             //修改标签
-            String[] dynamicTags = article.getDynamicTags();
-            if (dynamicTags != null && dynamicTags.length > 0) {
-                int tags = addTagsToArticle(dynamicTags, article.getId());
-                if (tags == -1) {
-                    return tags;
+            String[] dynamicTag = article.getDynamicTag();
+            if (dynamicTag != null && dynamicTag.length > 0) {
+                int tag = addTagsToArticle(dynamicTag, article.getId());
+                if (tag == -1) {
+                    return tag;
                 }
             }
             return i;

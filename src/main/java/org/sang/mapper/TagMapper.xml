@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.sang.mapper.TagMapper">
+    <insert id="addTag" parameterType="org.sang.bean.Tag">
+        INSERT INTO tags SET createtime=#{createTime},tagname=#{tagName}
+    </insert>
+    <delete id="deleteTagByIds">
+        DELETE FROM tags WHERE id IN
+        <foreach collection="ids" separator="," open="(" close=")" item="id">
+            #{id}
+        </foreach>
+    </delete>
+    <update id="updateTagById" parameterType="org.sang.bean.Tag">
+        UPDATE tags SET tagname=#{tagName} WHERE id=#{id}
+    </update>
+
+    <select id="getPid" resultType="int">
+        SELECT pid FROM tags where id=#{id}
+    </select>
+
+
+    <select id="getAllTags" resultType="org.sang.bean.Tag">
+        SELECT * FROM tags
+    </select>
+
+</mapper>

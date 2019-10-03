@@ -20,10 +20,10 @@ public class Article {
     private Integer state; //当前状态
     private Integer pageView; //浏览量
     private Timestamp editTime; //最后编辑时间
-    private String[] dynamicTags; //动态标签
+    private String[] dynamicTag; //动态标签
     private String nickName; //昵称？
     private String cateName; //类别名？？
-    private List<Tags> tags; //标签列表？？
+    private List<Tag> tag; //标签列表？？
     private String stateStr; //状态字符串？？
 
     public String getStateStr() {
@@ -34,12 +34,12 @@ public class Article {
         this.stateStr = stateStr;
     }
 
-    public List<Tags> getTags() {
-        return tags;
+    public List<Tag> getTag() {
+        return tag;
     }
 
-    public void setTags(List<Tags> tags) {
-        this.tags = tags;
+    public void setTag(List<Tag> tag) {
+        this.tag = tag;
     }
 
     public String getNickName() {
@@ -58,12 +58,12 @@ public class Article {
         this.cateName = cateName;
     }
 
-    public String[] getDynamicTags() {
-        return dynamicTags;
+    public String[] getDynamicTag() {
+        return dynamicTag;
     }
 
-    public void setDynamicTags(String[] dynamicTags) {
-        this.dynamicTags = dynamicTags;
+    public void setDynamicTag(String[] dynamicTag) {
+        this.dynamicTag = dynamicTag;
     }
 
     public Timestamp getEditTime() {
@@ -176,10 +176,10 @@ public class Article {
                 ", state=" + state +
                 ", pageView=" + pageView +
                 ", editTime=" + editTime +
-                ", dynamicTags=" + Arrays.toString(dynamicTags) +
+                ", dynamicTag=" + Arrays.toString(dynamicTag) +
                 ", nickname='" + nickName + '\'' +
                 ", cateName='" + cateName + '\'' +
-                ", tags=" + tags +
+                ", tag=" + tag +
                 ", stateStr='" + stateStr + '\'' +
                 '}';
     }

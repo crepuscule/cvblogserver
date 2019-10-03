@@ -111,7 +111,7 @@
         <result column="summary" property="summary"/>
         <result column="nickname" property="nickName"/>
         <result column="catename" property="cateName"/>
-        <collection property="tags" ofType="org.sang.bean.Tags" column="tagName">
+        <collection property="tag" ofType="org.sang.bean.Tag" column="tagName">
             <id property="id" column="tid"/>
             <result property="tagName" column="tagname"/>
         </collection>
